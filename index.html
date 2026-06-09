@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products — Erboristi Lendi SA</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <p class="page-eyebrow">Erboristi Lendi SA — Curio, Ticino</p>
+    <h1>Organic Herbs<br>&amp; Spices</h1>
+    <p>B2B wholesale supply of certified organic raw materials for food, herbal, and industrial applications.</p>
+    <div class="cert-badges">
+      <span class="cert-badge">Bio Suisse</span>
+      <span class="cert-badge">EU Organic</span>
+      <span class="cert-badge">Fair Trade</span>
+      <span class="cert-badge">Naturland Fair</span>
+    </div>
+  </div>
+</header>
+
+<nav class="controls">
+  <div class="controls-row">
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all"   onclick="filterCat('all',this)">All</button>
+      <button class="filter-btn"        data-filter="spice" onclick="filterCat('spice',this)">Spices</button>
+      <button class="filter-btn"        data-filter="herb"  onclick="filterCat('herb',this)">Herbs</button>
+      <button class="filter-btn"        data-filter="tea"   onclick="filterCat('tea',this)">Teas</button>
+      <button class="filter-btn"        data-filter="blend" onclick="filterCat('blend',this)">Blends</button>
+    </div>
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('en',this)">EN</button>
+      <button class="lang-btn"        onclick="setLang('de',this)">DE</button>
+      <button class="lang-btn"        onclick="setLang('it',this)">IT</button>
+      <button class="lang-btn"        onclick="setLang('fr',this)">FR</button>
+    </div>
+  </div>
+  <div class="cert-filter-bar" id="certFilterBar">
+    <span class="cert-filter-label" id="certLabel">Cert:</span>
+    <button class="cert-filter-btn active" data-cert="all"           onclick="filterCert('all',this)">All</button>
+    <button class="cert-filter-btn"        data-cert="Bio Suisse"    onclick="filterCert('Bio Suisse',this)">Bio Suisse</button>
+    <button class="cert-filter-btn"        data-cert="EU Organic"    onclick="filterCert('EU Organic',this)">EU Organic</button>
+    <button class="cert-filter-btn"        data-cert="Fair Trade"    onclick="filterCert('Fair Trade',this)">Fair Trade</button>
+    <button class="cert-filter-btn"        data-cert="Naturland Fair" onclick="filterCert('Naturland Fair',this)">Naturland Fair</button>
+  </div>
+</nav>
+
+<main class="catalogue">
+  <div class="grid" id="productGrid"><p class="empty">Loading…</p></div>
+</main>
+<div class="catalogue-footer" id="catalogueFooter"></div>
+
+<div class="overlay-bg" id="overlayBg" onclick="closeOverlay(event)">
+  <div class="overlay">
+    <div class="overlay-handle"></div>
+    <button class="overlay-close" onclick="closeOverlayDirect()">✕</button>
+    <img class="overlay-img" id="overlayImg" src="" alt="">
+    <div class="overlay-content" id="overlayContent"></div>
+  </div>
+</div>
+
+<script src="js/catalogue.js"></script>
+</body>
+</html>
